@@ -1,0 +1,157 @@
+.design {
+  border-bottom: 1px solid $contentmedium;
+  padding: 27px 20px 22px 20px;
+  cursor: pointer;
+
+  &__legend {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__titledesign {
+    margin-right: 9.5em;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: $contentdark;
+  }
+}
+
+.palette {
+  margin-top: 22px;
+  margin-left: 19px;
+  font-size: 0.875rem;
+}
+
+.colors {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/*PALETA DE COLORES*/
+
+.square {
+  width: 30px;
+  height: 25px;
+}
+
+.blue1 {
+  background: $branddark;
+
+  &__blue2 {
+    background: $dirty-blue;
+  }
+
+  &__blue3 {
+    background: $hospital-green;
+  }
+}
+
+.red1 {
+  background: $dried-blood;
+
+  &__red2 {
+    background: $rusty-red;
+  }
+  &__red3 {
+    background: $tomato;
+  }
+}
+
+.mix1 {
+  background: $slate;
+
+  &__mix2 {
+    background: $faded-orange;
+  }
+  &__mix3 {
+    background: $light-grey-blue;
+  }
+}
+
+.mixteam1 {
+  background: $team1;
+
+  &__mixteam2 {
+    background: $team2;
+  }
+  &__mixteam3 {
+    background: $team3;
+  }
+}
+
+.palette1 {
+  .rectangle {
+    background-color: $dirty-blue;
+  }
+  .name {
+    color: $branddark;
+  }
+  .icons {
+    .border {
+      border: 2px solid $hospital-green;
+
+      .link {
+        color: $branddark;
+      }
+    }
+  }
+}
+
+.palette2 {
+  .rectangle {
+    background-color: $rusty-red;
+  }
+  .name {
+    color: $dried-blood;
+  }
+  .icons {
+    .border {
+      border: 2px solid $tomato;
+
+      .link {
+        color: $dried-blood;
+      }
+    }
+  }
+}
+
+.palette3 {
+  .rectangle {
+    background-color: $faded-orange;
+  }
+  .name {
+    color: $slate;
+  }
+  .icons {
+    .border {
+      border: 2px solid $light-grey-blue;
+
+      .link {
+        color: $slate;
+      }
+    }
+  }
+}
+
+.palette4 {
+  .rectangle {
+    background-color: $team2;
+  }
+  .name {
+    color: $team1;
+  }
+  .icons {
+    .border {
+      border: 2px solid $team3;
+
+      .link {
+        color: $team1;
+      }
+    }
+  }
+}
