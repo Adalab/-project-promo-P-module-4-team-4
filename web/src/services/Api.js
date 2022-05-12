@@ -1,8 +1,10 @@
 const getDataApi = (data) => {
-  return fetch('https://awesome-profile-cards.herokuapp.com/card', {
-    method: 'POST',
+  // const URL = "https://awesome-profile-cards.herokuapp.com/card";
+
+  return fetch("https://localhost:4000/card", {
+    method: "POST",
     body: JSON.stringify(data),
-    headers: { 'Content-Type': 'application/json' },
+    headers: { "Content-Type": "application/json" },
   }).then((response) => response.json());
   // .then((result) => {
 
