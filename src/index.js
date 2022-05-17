@@ -10,6 +10,8 @@ const server = express();
 server.use(cors());
 server.use(express.json({ limit: '' }));
 
+server.set ("view engine", "ejs");
+
 // Arrancar el servidor en el puerto 4000
 const serverPort = 4000;
 server.listen(serverPort, () => {
