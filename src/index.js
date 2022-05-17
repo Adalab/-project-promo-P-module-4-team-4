@@ -10,7 +10,7 @@ const server = express();
 server.use(cors());
 server.use(express.json({ limit: '' }));
 
-server.set ("view engine", "ejs");
+server.set('view engine', 'ejs');
 
 // Arrancar el servidor en el puerto 4000
 const serverPort = 4000;
@@ -22,8 +22,7 @@ server.listen(serverPort, () => {
 
 // Endpoint para crear la tarjeta
 server.post('/card', (req, res) => {
-  const newData = { ...req.body };
-  data.push(newData);
+  const newData = { ...req.body, id: idRandom };
   if (
     req.body.name !== '' &&
     req.body.job !== '' &&
@@ -36,7 +35,7 @@ server.post('/card', (req, res) => {
   ) {
     const successResponse = {
       success: true,
-      cardURL: `https://awesome-profile-cards.herokuapp.com/card/${idRandom}`,
+      cardURL: `http://localhost:4000/card/${idRandom}`,
     };
     res.json(successResponse);
   } else {
@@ -48,10 +47,22 @@ server.post('/card', (req, res) => {
   }
 });
 
-server.get('/data', (req, res) => {
-  res.json('holi');
-});
+// server.get('/data', (req, res) => {
+//   res.json('holi');
+// });
 
 // Generamos un servidos estático
 const staticServerPathWeb = './src/public-react'; // En esta carpeta ponemos los ficheros estáticos
 server.use(express.static(staticServerPathWeb));
+// Crear servicio estático para los estilos
+
+const staticServerPathStyle = './src/style'; // En esta carpeta ponemos los ficheros estáticos
+server.use(express.static(staticServerPathStyle));
+
+server.get('/card/:id', (req, res) => {
+  const foundCard = data.find((card) => card.id === req.params.id);
+
+  console.log(foundCard);
+  res.json('holi');
+  // res.render('card', data.find((data) => ))
+});
