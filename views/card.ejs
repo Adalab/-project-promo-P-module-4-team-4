@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="cat.png" />
+    <link rel="icon" href="/cat.png" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Refactorizadas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -8728,19 +8728,20 @@
           u+f250, u+f252, u+f27a;
       }
     </style>
-    <script defer="defer" src="/main.css"></script>
-    <link href="./static/css/main.62b982f9.css" rel="stylesheet" />
+    <!-- <script defer="defer" src="/main.css"></script> -->
+
+    <link rel="stylesheet" href="/main.css" />
   </head>
   <body>
     <article class="preview">
       <div class="card palette1">
         <div class="card__rectangle rectangle"></div>
-        <h2 class="card__names name">Nombre Apellido</h2>
-        <h3 class="card__profession">Profesión</h3>
+        <h2 class="card__names name"><%= name %></h2>
+        <h3 class="card__profession"><%= job %></h3>
         <div
           class="card__container-img"
           style="
-            background-image: url('./static/media/cat.fb6b2a85514982309999.jpg');
+            background-image: url('/static/media/cat.fb6b2a85514982309999.jpg');
           "
         ></div>
         <nav class="card__icons icons">
@@ -8750,13 +8751,13 @@
             ></a>
           </div>
           <div class="card__icons__container border">
-            <a title="enviar email" href="mailto:" target="blank"
+            <a title="enviar email" href="mailto:<%= email %>" target="blank"
               ><i class="fa-solid fa-envelope link"></i
             ></a>
           </div>
           <div class="card__icons__container border">
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/<%= linkedin %>"
               target="blank"
               title="ir a perfil de Linkedin"
               ><i class="fa-brands fa-linkedin-in link"></i
@@ -8764,7 +8765,7 @@
           </div>
           <div class="card__icons__container border">
             <a
-              href="https://github.com/"
+              href="https://github.com/<%= github %>"
               target="blank"
               title="ir a perfil de Github"
               ><i class="fa-brands fa-github-alt link"></i
