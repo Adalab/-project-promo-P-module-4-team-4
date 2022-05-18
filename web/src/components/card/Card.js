@@ -22,6 +22,8 @@ function Card() {
 
   const [dataAPI, setDataAPI] = useState({});
   const [disable, setDisable] = useState('');
+  const [sectionShare, setSectionShare] = useState('hiddenTwitter');
+
   const [classCollapsible, setClassCollapsible] = useState({
     design: '',
     stuffed: 'hidden',
@@ -30,6 +32,7 @@ function Card() {
 
   const handleReset = (cleanedData) => {
     setData(cleanedData);
+    setSectionShare('hiddenTwitter');
   };
 
   const handleCollapsible = (id) => {
@@ -85,6 +88,7 @@ function Card() {
     getDataApi(data).then((response) => {
       setDataAPI(response);
     });
+    setSectionShare('');
   };
 
   const handleInput = (value, name) => {
@@ -106,7 +110,12 @@ function Card() {
       <div className="createpage">
         <Header />
         <div className="createwrapper">
-          <Preview reset={handleReset} data={data} />
+          <Preview
+            reset={handleReset}
+            data={data}
+            collapsibleAll={setClassCollapsible}
+            disable={setDisable}
+          />
           <form className="form" action="/signup" method="post">
             <Design
               data={data}
@@ -130,11 +139,7 @@ function Card() {
               classCollapsible={classCollapsible}
               shareOnTwitter={shareOnTwitter}
               dataApi={dataAPI}
-              message={
-                dataAPI.success === true
-                  ? `La tarjeta ha sido creada : `
-                  : `Falta algún dato`
-              }
+              sectionShare={sectionShare}
             />
           </form>
         </div>

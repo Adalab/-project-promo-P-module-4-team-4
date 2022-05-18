@@ -14,8 +14,14 @@ const Preview = (props) => {
       palette: '1',
       photo: Avatar,
     };
-
+    const overallCollapsables = {
+      stuffed: 'hidden',
+      share: 'hidden',
+      design: 'hidden',
+    };
+    props.collapsibleAll(overallCollapsables);
     props.reset(cleanedData);
+    props.disable('');
   };
 
   return (
@@ -61,13 +67,13 @@ const Preview = (props) => {
               <i className="fa-solid fa-envelope  link"></i>
             </a>
           </div>
-          <div className="card__icons__container border">
+          <div className="card__icons__container border ">
             <a
               href={`https://www.linkedin.com/${props.data.linkedin}`}
               target="blank"
               title="ir a perfil de Linkedin"
             >
-              <i className="fa-brands fa-linkedin-in  link"></i>
+              <i className="fa-brands fa-linkedin-in link"></i>
             </a>
           </div>
           <div className="card__icons__container border">

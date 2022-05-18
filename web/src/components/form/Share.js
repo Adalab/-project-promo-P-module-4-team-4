@@ -6,7 +6,6 @@ const Share = (props) => {
 
   const handleHiddenSections = (ev) => {
     const id = ev.target.id;
-
     props.handleCollapsible(id);
   };
   return (
@@ -39,8 +38,12 @@ const Share = (props) => {
       </div>
 
       <div>
-        <div className="done subsection">
-          <p className="done__title">{props.message}</p>
+        <div className={`done ${props.sectionShare}`}>
+          <p className="done__title">
+            {props.dataApi.success
+              ? 'La tarjeta ha sido creada'
+              : 'Falta algún dato'}
+          </p>
           <a
             className="done__link"
             title="Ir al enlace de la tarjeta"
@@ -49,7 +52,9 @@ const Share = (props) => {
             {props.dataApi.cardURL}
           </a>
           <button
-            className="done__button-twitter"
+            className={`done__button-twitter    ${
+              props.dataApi.success ? '' : 'hiddenTwitter'
+            }`}
             title="publicar la tarjeta en twitter"
             onClick={props.shareOnTwitter}
           >
