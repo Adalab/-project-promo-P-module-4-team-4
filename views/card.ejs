@@ -8734,19 +8734,20 @@
   </head>
   <body>
     <article class="preview">
-      <div class="card palette1">
+      <div class="card palette<%= palette %>">
         <div class="card__rectangle rectangle"></div>
         <h2 class="card__names name"><%= name %></h2>
         <h3 class="card__profession"><%= job %></h3>
         <div
           class="card__container-img"
-          style="
-            background-image: url('/static/media/cat.fb6b2a85514982309999.jpg');
-          "
+          style="background-image: url(<%= photo %>)"
         ></div>
         <nav class="card__icons icons">
           <div class="card__icons__container border">
-            <a title="llamar por teléfono" href="" target="blank"
+            <a
+              title="llamar por teléfono"
+              href="tel:<%= phone %>"
+              target="blank"
               ><i class="fa-solid fa-mobile-screen-button link"></i
             ></a>
           </div>

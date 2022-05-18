@@ -3,12 +3,11 @@ const express = require('express');
 const cors = require('cors');
 const { v4: uuidv4 } = require('uuid');
 const data = [];
-const idRandom = uuidv4();
 
 // Configuración del servidor
 const server = express();
 server.use(cors());
-server.use(express.json({ limit: '' }));
+server.use(express.json({ limit: '10mb' }));
 
 server.set('view engine', 'ejs');
 
@@ -22,7 +21,7 @@ server.listen(serverPort, () => {
 
 // Endpoint para crear la tarjeta
 server.post('/card', (req, res) => {
-  const newData = { ...req.body, id: idRandom };
+  const newData = { ...req.body, id: uuidv4() };
   if (
     req.body.name !== '' &&
     req.body.job !== '' &&
@@ -36,7 +35,7 @@ server.post('/card', (req, res) => {
     data.push(newData);
     const successResponse = {
       success: true,
-      cardURL: `http://localhost:4000/card/${idRandom}`,
+      cardURL: `http://localhost:4000/card/${newData.id}`,
     };
     res.json(successResponse);
   } else {
@@ -59,5 +58,6 @@ server.use(express.static(staticServerPathStyle));
 server.get('/card/:id', (req, res) => {
   const foundCard = data.find((card) => card.id === req.params.id);
 
+  console.log(foundCard);
   res.render('card', foundCard);
 });
