@@ -8,17 +8,20 @@ import Design from '../form/Design';
 import Stuffed from '../form/Stuffed';
 import Share from '../form/Share';
 import Avatar from '../../images/cat.jpg';
+import ls from '../../services/localStorage';
 function Card() {
-  const [data, setData] = useState({
-    name: '',
-    job: '',
-    email: '',
-    phone: '',
-    linkedin: '',
-    github: '',
-    palette: '1',
-    photo: Avatar,
-  });
+  const [data, setData] = useState(
+    ls.get('data', {
+      name: '',
+      job: '',
+      email: '',
+      phone: '',
+      linkedin: '',
+      github: '',
+      palette: '1',
+      photo: Avatar,
+    })
+  );
 
   const [dataAPI, setDataAPI] = useState({});
   const [disable, setDisable] = useState('');
@@ -32,7 +35,9 @@ function Card() {
 
   const handleReset = (cleanedData) => {
     setData(cleanedData);
+
     setSectionShare('hiddenTwitter');
+    ls.remove('data');
   };
 
   const handleCollapsible = (id) => {
@@ -93,10 +98,13 @@ function Card() {
 
   const handleInput = (value, name) => {
     setData({ ...data, [name]: value });
+
+    ls.set('data', { ...data, [name]: value });
   };
 
   const handleImage = (photo) => {
     setData({ ...data, photo });
+    ls.set('data', { ...data, photo });
   };
 
   // Función twitter
