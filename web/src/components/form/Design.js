@@ -18,9 +18,23 @@ const Design = (props) => {
         onClick={handleHiddenSections}
         id="design"
       >
-        <i className="fa-regular fa-object-ungroup icon"></i>
-        <p className="design__titledesign">Diseña</p>
-        <i className="fa-solid fa-angle-up collapsible"></i>
+        <i
+          className="fa-regular fa-object-ungroup icon"
+          onClick={handleHiddenSections}
+          id="design"
+        ></i>
+        <p
+          className="design__titledesign"
+          onClick={handleHiddenSections}
+          id="design"
+        >
+          Diseña
+        </p>
+        <i
+          className="fa-solid fa-angle-up collapsible"
+          onClick={handleHiddenSections}
+          id="design"
+        ></i>
       </div>
 
       <div className="subsection">

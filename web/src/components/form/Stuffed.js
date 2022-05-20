@@ -17,9 +17,23 @@ const Stuffed = (props) => {
         onClick={handleHiddenSections}
         id="stuffed"
       >
-        <i className="fa-regular fa-keyboard icon"></i>
-        <p className="filled__title-filled">rellena</p>
-        <i className="fa-solid fa-angle-up collapsible "></i>
+        <i
+          className="fa-regular fa-keyboard icon"
+          onClick={handleHiddenSections}
+          id="stuffed"
+        ></i>
+        <p
+          className="filled__title-filled"
+          onClick={handleHiddenSections}
+          id="stuffed"
+        >
+          rellena
+        </p>
+        <i
+          className="fa-solid fa-angle-up collapsible "
+          onClick={handleHiddenSections}
+          id="stuffed"
+        ></i>
       </div>
       <section className="subsection filled-section">
         <label className="firstname filled-text" htmlFor="name">
