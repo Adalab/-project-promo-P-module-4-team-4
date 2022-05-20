@@ -15,7 +15,9 @@ server.set('view engine', 'ejs');
 // Arrancar el servidor en el puerto 4000
 const serverPort = process.env.PORT || 4000;
 server.listen(serverPort, () => {
-  console.log(`Server listening at http://localhost:${serverPort}`);
+  console.log(
+    `Server listening at http://app-refactorizadas.herokuapp.com${serverPort}`
+  );
 });
 
 // Endpoint para llamar
@@ -50,7 +52,7 @@ server.post('/card', (req, res) => {
     );
     const successResponse = {
       success: true,
-      cardURL: `http://localhost:4000/card/${newData.id}`,
+      cardURL: `http://app-refactorizadas.herokuapp.com/card/${newData.id}`,
     };
     res.json(successResponse);
   } else {
