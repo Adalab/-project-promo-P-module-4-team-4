@@ -17,9 +17,23 @@ const Share = (props) => {
           onClick={handleHiddenSections}
           id="share"
         >
-          <i className="fa-solid fa-share-nodes share__container__icon"></i>
-          <p className="share__container__title">comparte</p>
-          <i className="fa-solid fa-angle-up share__container__angle collapsible "></i>
+          <i
+            className="fa-solid fa-share-nodes share__container__icon"
+            onClick={handleHiddenSections}
+            id="share"
+          ></i>
+          <p
+            className="share__container__title"
+            onClick={handleHiddenSections}
+            id="share"
+          >
+            comparte
+          </p>
+          <i
+            className="fa-solid fa-angle-up share__container__angle collapsible "
+            onClick={handleHiddenSections}
+            id="share"
+          ></i>
         </div>
         <div className="button-container subsection">
           <button

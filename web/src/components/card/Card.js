@@ -88,9 +88,9 @@ function Card() {
 
   const handleCreateCard = (ev) => {
     // Se ejecutaba en esta funcion
-    setDisable('disable');
     // Que se quite el hidden de la seccion tarjeta creada
     getDataApi(data).then((response) => {
+      setDisable('disable');
       setDataAPI(response);
     });
     setSectionShare('');
